@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{62AC4399-9107-4C62-9AC9-29E12581BE67}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>banking_system</RootNamespace>
+    <AssemblyName>banking_system</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SQLite.NET, Version=0.21.1869.3794, Culture=neutral, PublicKeyToken=c273bd375e695f9c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\SQLite.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\account.cs" />
+    <Compile Include="Classes\interest.cs" />
+    <Compile Include="Classes\payee.cs" />
+    <Compile Include="Classes\transaction.cs" />
+    <Compile Include="Classes\user.cs" />
+    <Compile Include="database.cs" />
+    <Compile Include="Pages\frmAddPayee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\frmAddPayee.Designer.cs">
+      <DependentUpon>frmAddPayee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\frmAddUser.Designer.cs">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmAdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\frmAdminDashboard.Designer.cs">
+      <DependentUpon>frmAdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmCustomerAccounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\frmCustomerAccounts.Designer.cs">
+      <DependentUpon>frmCustomerAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmCustomerBalances.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\frmCustomerBalances.Designer.cs">
+      <DependentUpon>frmCustomerBalances.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmCustomerDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\frmCustomerDashboard.Designer.cs">
+      <DependentUpon>frmCustomerDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmCustomerTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\frmCustomerTransactions.Designer.cs">
+      <DependentUpon>frmCustomerTransactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmDeposit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\frmDeposit.Designer.cs">
+      <DependentUpon>frmDeposit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmExistingPayeePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\frmExistingPayeePayment.Designer.cs">
+      <DependentUpon>frmExistingPayeePayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmMakePayments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\frmMakePayments.Designer.cs">
+      <DependentUpon>frmMakePayments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmManageAccounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\frmManageAccounts.Designer.cs">
+      <DependentUpon>frmManageAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmManagePayees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\frmManagePayees.Designer.cs">
+      <DependentUpon>frmManagePayees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmNewAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\frmNewAccount.Designer.cs">
+      <DependentUpon>frmNewAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmNewPayeePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\frmNewPayeePayment.Designer.cs">
+      <DependentUpon>frmNewPayeePayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmSend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\frmSend.Designer.cs">
+      <DependentUpon>frmSend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmTransferMoney.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\frmTransferMoney.Designer.cs">
+      <DependentUpon>frmTransferMoney.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmUpdatePayee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\frmUpdatePayee.Designer.cs">
+      <DependentUpon>frmUpdatePayee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmUpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\frmUpdateUser.Designer.cs">
+      <DependentUpon>frmUpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\frmUsers.Designer.cs">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmWithdraw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\frmWithdraw.Designer.cs">
+      <DependentUpon>frmWithdraw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Pages\frmAddPayee.resx">
+      <DependentUpon>frmAddPayee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\frmAddUser.resx">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\frmAdminDashboard.resx">
+      <DependentUpon>frmAdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\frmCustomerAccounts.resx">
+      <DependentUpon>frmCustomerAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\frmCustomerBalances.resx">
+      <DependentUpon>frmCustomerBalances.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\frmCustomerDashboard.resx">
+      <DependentUpon>frmCustomerDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\frmCustomerTransactions.resx">
+      <DependentUpon>frmCustomerTransactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\frmDeposit.resx">
+      <DependentUpon>frmDeposit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\frmExistingPayeePayment.resx">
+      <DependentUpon>frmExistingPayeePayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\frmMakePayments.resx">
+      <DependentUpon>frmMakePayments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\frmManageAccounts.resx">
+      <DependentUpon>frmManageAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\frmManagePayees.resx">
+      <DependentUpon>frmManagePayees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\frmNewAccount.resx">
+      <DependentUpon>frmNewAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\frmNewPayeePayment.resx">
+      <DependentUpon>frmNewPayeePayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\frmSend.resx">
+      <DependentUpon>frmSend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\frmTransferMoney.resx">
+      <DependentUpon>frmTransferMoney.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\frmUpdatePayee.resx">
+      <DependentUpon>frmUpdatePayee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\frmUpdateUser.resx">
+      <DependentUpon>frmUpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\frmUsers.resx">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\frmWithdraw.resx">
+      <DependentUpon>frmWithdraw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
